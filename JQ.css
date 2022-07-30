@@ -10,7 +10,10 @@ body {
 }
 
 h1 {
+  background: tomato;
+  color: #fff;
   font-size: 3rem;
+  margin-bottom: 3rem;
 }
 
 h3 {
@@ -39,6 +42,7 @@ a:hover {
   min-height: 10vh;
   max-height: 100px;
   opacity: 0.4;
+  position: relative;
 }
 
 #img1:hover {
@@ -101,4 +105,11 @@ button:hover {
 
 .list li:hover {
   cursor: pointer;
+}
+
+.best {
+  font-size: larger;
+  font-variant: small-caps;
+  color: black;
+  background: aqua;
 }

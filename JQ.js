@@ -100,8 +100,38 @@ $('#result').load('AjaxTest.html', function( // with callback function
    alert('jQuery and Ajax can be used to check things like statusTxt. In this case, it is all good. The AjaxTest.html file was found and loaded');
   } else if (statusTxt == "error") {
    alert (`Uh Oh, Ajax statusTxt has an error: ${xhr.statusText}`);
-
   }
 });
+
+// getting JSON data:
+$.getJSON('users.JSON', function(data) {
+ $.each(data, function(i, user) {
+  $('ul#users').append('<li>'+user.name+'</li>');
+ });
 })
 
+// but the Ajax method is the most flexible:
+$.ajax({
+ method: 'GET',
+ url: 'http://jsonplaceholder.typicode.com/posts', // found example online
+ dataType: 'json'
+}).done(function(data){
+ console.log(data);
+ $.map(data, function(post, i){ // pass in a descriptive params if possible
+  $('#result2').append(post.title);
+ })
+})
+
+// making a post request:
+$('#postForm').submit(function(e) {
+ e.preventDefault();
+ var title = $('#title').val();
+ var body = $('#body').val();
+ var url = $(this).attr('action');
+ $.post(url, {title:title, body:body}).done(function(data) {
+  console.log('Post saved');
+  console.log(data);
+ })
+})
+
+})

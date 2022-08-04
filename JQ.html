@@ -9,6 +9,13 @@
   </head>
   <body>
     <h1>Intro to jQuery</h1>
+    <h4>
+      Check out
+      <a href="https://github.com/Sloan-Crawford/jQuery" target="#" id="github"
+        >the code on gitHub</a
+      >
+      to see how jQuery works on this application
+    </h4>
     <h3>
       <a href="https://htmlcheatsheet.com/jquery/" target="#"
         >jQuery cheatsheet</a
@@ -19,6 +26,7 @@
       <button id="btn1" onclick="func1()">FADE</button>
     </div>
     <div id="div1">
+      <button id="btn2" onclick="func2()">CHANGE & HIDE</button>
       <p id="p1">
         developed in 2006 <br />
         Jon Rezik was frustrated with the issue of CROSS BROWSER JS <br />
@@ -47,9 +55,8 @@
         <br />download or get link from cdn (uncompressed or compressed or
         minified)
       </p>
-      <button id="btn2" onclick="func2()">CHANGE & HIDE</button>
     </div>
-    <h2>Hover to see jquery effects:</h2>
+    <h2>Hover or click to see jquery effects:</h2>
     <div class="div3">
       <ul class="list">
         <li>Item 1</li>
@@ -62,6 +69,41 @@
     <button id="btn3">Append</button>
     <button id="btn4">Prepend</button>
     <div id="result"></div>
+    <div>
+      <h3>
+        You can even get and append JSON data from another local file (check
+        users.JSON):
+      </h3>
+      <div class="container">
+        <ul class="list" id="users"></ul>
+      </div>
+    </div>
+    <h3>
+      but the Ajax method is the most flexible way to bring in an external file
+      like this:
+    </h3>
+    <div class="div3" id="result2"></div>
+    <h3>
+      Add content and submit this form to see how the post request is handled by
+      jquery and ajax. The output will be logged in the console, so check that
+      out:
+    </h3>
+    <div class="div4">
+      <form action="http://jsonplaceholder.typicode.com/posts" id="postForm">
+        <input type="text" id="title" placeholder="Title" />
+        <br />
+        <textarea
+          placeholder="Body"
+          id="body"
+          name=""
+          cols="50"
+          rows="5"
+        ></textarea>
+        <br />
+        <input type="submit" value="Submit" id="submit" />
+      </form>
+    </div>
+    <h3>Now go have fun using jQuery to build your favourite projects!</h3>
   </body>
   <!-- JQuery, JS -->
   <script
